@@ -9,7 +9,7 @@ Template.cartShow.helpers({
    },
   
    thereAreNo: function (items) {
-     return items === 0;
+     return items >= 0;
    } 
 });
 
@@ -29,7 +29,7 @@ Template.cartShow.events({
   'change .item-qty': function (e) {
     var rawValue = e.target.value;
     if(isNaN(rawValue))
-      alert('you did not enter a number');
+      sAlert.error('you did not enter a number');
     else{
       var number = parseInt(rawValue);
       var name = this.name;
@@ -40,9 +40,9 @@ Template.cartShow.events({
         this.quantity = number;
         updateCart(this.sku, this.quantity, function (err, res) {
           if(err)
-            alert('was not able to update');
+            sAlert.error('was not able to update');
           else
-            alert('updated ' + name);
+            sAlert.success('updated ' + name);
         });
       }
     }

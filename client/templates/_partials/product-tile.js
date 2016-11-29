@@ -8,7 +8,7 @@ Template.productTile.events({
 
     addToCart(this.sku,function (err, res) {
       if (err)
-        alert('error in adding to cart');
+        sAlert.error('error in adding to cart');
       else
         Router.go('cartShow');
     });

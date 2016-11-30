@@ -1,6 +1,6 @@
 /**
  * Created by aaronbrecher on 11/29/16.
- */
+ */ 
 CheckoutViewModel = function(args){
   var self = this;
 
